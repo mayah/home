@@ -15,8 +15,9 @@ export PATH=~/usr/bin:$PATH
 export PATH=~/usr/script:$PATH
 export PATH=~/repos/chromium.git:$PATH
 export PATH=~/repos/chromium.git/src/third_party/llvm-build/Release+Asserts/bin:$PATH
-# /usr/local/bin should be prioritized to /usr/bin.
+export PATH=/usr/texbin/:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# /usr/local/bin should be prioritized to /usr/bin.
 export PATH=/usr/local/bin:$PATH
 
 # hostname setup
