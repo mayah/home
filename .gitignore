@@ -1,5 +1,6 @@
 /*
 !.gitignore
+!.tmux.conf
 !/.emacs.d
 !/.zsh
 
