@@ -20,6 +20,14 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # /usr/local/bin should be prioritized to /usr/bin.
 export PATH=/usr/local/bin:$PATH
 
+export PATH=/Library/PostgreSQL/9.1/bin:$PATH
+
+export MANPATH=/opt/local/man:$MANPATH
+export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
+export C_INCLUDE_PATH=/opt/local/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/opt/local/include:$CPLUS_INCLUDE_PATH
+
 # hostname setup
 source $ZDOTDIR/.zshenv_hostname
 
