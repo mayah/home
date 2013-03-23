@@ -37,6 +37,9 @@ function chpwd() {
         Darwin)
             ls -GF
             ;;
+        FreeBSD)
+            ls -GF
+            ;;
         *)
             ls -CF --color=auto
             ;;

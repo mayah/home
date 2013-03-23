@@ -8,6 +8,9 @@ case `uname` in
     Darwin)
         alias ls="ls -GF"
         ;;
+    FreeBSD)
+        alias ls="ls -GF"
+        ;;
     *)
         alias ls="ls -CF"
         ;;
