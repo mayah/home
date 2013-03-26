@@ -58,9 +58,11 @@
 (require 'init-kgb)
 
 (require 'init-appearance)
+;(require 'init-webkit)
 
-(require 'init-webkit)
-
+; override the general configuration in some situations.
+(when (googlep)
+  (require 'init-google))
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

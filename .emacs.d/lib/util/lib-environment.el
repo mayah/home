@@ -19,4 +19,8 @@
 ;; ----------------------------------------------------------------------
 ;; environment-type predicates.
 
+; t if in the google environment
+(defun googlep ()
+  (file-exists-p "/home/build/public/eng/elisp/google.el"))
+
 (provide 'lib-environment)
