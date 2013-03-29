@@ -1,9 +1,14 @@
 # -*- mode:shell-script -*-
 # Aliases
+
+# I would like to use 'open' as well in non-Mac environments.
 if [ -e /usr/bin/cygstart ]; then
     alias open="cygstart"
+elif [ -e /usr/bin/xdg-open ]; then
+    alias open="xdg-open"
 fi
 
+# TODO(mayah): We might want to genelize this.
 case `uname` in
     Darwin)
         alias ls="ls -GF"
@@ -11,10 +16,15 @@ case `uname` in
     FreeBSD)
         alias ls="ls -GF"
         ;;
+    Linux)
+        alias ls="ls -CF --color"
+        ;;
     *)
         alias ls="ls -CF"
         ;;
 esac
+
+# Mistyping ls and cd.
 alias lls="ls"
 alias sl="ls"
 alias l="ls"
