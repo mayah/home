@@ -6,6 +6,8 @@ bashcompinit
 # We would like to use the system installed git-completion.bash as much as possible.
 if [ -e /usr/share/git-core/git-completion.bash ]; then
     source /usr/share/git-core/git-completion.bash
+elif [ -e /etc/bash_completion.d/git ]; then
+    source /etc/bash_completion.d/git
 fi
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
