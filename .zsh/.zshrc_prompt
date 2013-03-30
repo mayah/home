@@ -1,9 +1,21 @@
 # -*- mode: shell-script -*-
 
+# We would like to show data and time on the right side of shell.
+# However, RPROMPT will be shown on the cursor line instead of information line.
+# So I calculate the width and the prompt and inserts the necessary spaces.
+#
+
 IDNTBAR_COLOR=$PR_GREEN
 PATHBAR_COLOR=$PR_YELLOW
 DATEBAR_COLOR=$PR_BLUE
 INFOBAR_COLOR=$PR_RED
+
+# When the shell is shown by SSH, we would like to indicate it.
+# Currently, we change the  IDNTBAR color.
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    IDNTBAR_COLOR=$PR_CYAN
+fi
 
 function precmd {
     local TERMWIDTH
