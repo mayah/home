@@ -8,7 +8,7 @@
 IDNTBAR_COLOR=$PR_GREEN
 PATHBAR_COLOR=$PR_YELLOW
 DATEBAR_COLOR=$PR_BLUE
-INFOBAR_COLOR=$PR_RED
+INFOBAR_COLOR=$PR_MAGENTA
 
 # When the shell is shown by SSH, we would like to indicate it.
 # Currently, we change the  IDNTBAR color.
@@ -26,7 +26,12 @@ function precmd {
     # path part
     PATHBAR=\[${(%):-%~}\]
     # some other information e.g. git branch
-    INFOBAR=''
+    local GIT_BRANCH_NAME=`show-git-current-branch` 
+    if [ -z $GIT_BRANCH_NAME ]; then
+        INFOBAR=""
+    else
+        INFOBAR="[$GIT_BRANCH_NAME]"
+    fi
     # current date
     DATEBAR=${(%):-(%0*/%w)}
     # filler
@@ -37,7 +42,7 @@ function precmd {
     local pathbar_size=${#PATHBAR} 
     local infobar_size=${#INFOBAR}
     local datebar_size=${#DATEBAR}
-    local total_size=$(($idntbar_size + $pathbar_size + $datebar_size + $infobar + 3))
+    local total_size=$(($idntbar_size + $pathbar_size + $infobar_size + $datebar_size + 3))
 
     # if path is too long to fit, short path should be used.
     # TODO: Not implemented yet!
@@ -50,9 +55,7 @@ function precmd {
 
 setprompt() {
     setopt prompt_subst
-    
     MARK=${(%):-%(!.#.$)}
-
     PROMPT='$IDNTBAR_COLOR$IDNTBAR $PATHBAR_COLOR$PATHBAR ${(e)PROMPT_FILLER} $INFOBAR_COLOR$INFOBAR $DATEBAR_COLOR$DATEBAR
 $PR_NO_COLOR$MARK '
 }

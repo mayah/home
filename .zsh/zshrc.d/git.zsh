@@ -10,30 +10,19 @@ elif [ -e /etc/bash_completion.d/git ]; then
     source /etc/bash_completion.d/git
 fi
 
-autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
-function rprompt-git-current-branch {
-    local name st color gitdir action
+# zsh has an abstraction layer for VCS. Let's use it.
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' formats '%b'
+zstyle ':vcs_info:*' actionformats '%b|%a'
+
+function show-git-current-branch {
     if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
         return
     fi
-    name=`git branch 2> /dev/null | grep '^\*' | cut -b 3-`
-    if [[ -z $name ]]; then
-        return
-    fi
-    
-    gitdir=`git rev-parse --git-dir 2> /dev/null`
-    action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
-    
-    st=`git status 2> /dev/null`
-    if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-        color=%F{green}
-    elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
-        color=%F{yellow}
-    elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-        color=%B%F{red}
-    else
-        color=%F{red}
-    fi
-    
-    echo "$color$name$action%f%b "
+    vcs_info
+
+    # It might be a good idea to show git status, but it's too heavy
+    # in chromium or WebKit.
+    echo "$vcs_info_msg_0_"
 }
