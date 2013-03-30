@@ -1,5 +1,4 @@
 # -*- mode:shell-script -*-
-# Aliases
 
 # I would like to use 'open' as well in non-Mac environments.
 if [ -e /usr/bin/cygstart ]; then
@@ -32,3 +31,8 @@ alias s="ls"
 alias c="cd"
 alias d="cd"
 alias ccd="cd"
+
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -al"
+alias lal="ls -al"

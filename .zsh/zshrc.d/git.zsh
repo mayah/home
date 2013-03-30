@@ -1,7 +1,12 @@
 # -*- mode: shell-script -*-
-#
-# functions
-#
+
+autoload bashcompinit
+bashcompinit
+
+# We would like to use the system installed git-completion.bash as much as possible.
+if [ -e /usr/share/git-core/git-completion.bash ]; then
+    source /usr/share/git-core/git-completion.bash
+fi
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 function rprompt-git-current-branch {
@@ -29,19 +34,4 @@ function rprompt-git-current-branch {
     fi
     
     echo "$color$name$action%f%b "
-}
-
-function chpwd() {
-    # In darwin, -G is used to colorlized.
-    case `uname` in
-        Darwin)
-            ls -GF
-            ;;
-        FreeBSD)
-            ls -GF
-            ;;
-        *)
-            ls -CF --color=auto
-            ;;
-    esac
 }

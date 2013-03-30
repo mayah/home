@@ -1,15 +1,6 @@
 # -*- mode: shell-script -*-
-#
-# .zshrc
-#  
 
-source $ZDOTDIR/.zshrc_util
-
-# colors
-source $ZDOTDIR/.zshrc_colors
-
-# utility functions
-source $ZDOTDIR/.zshrc_functions
+source $ZDOTDIR/base.zsh
 
 # basic settings
 bindkey -e               # use emacs key binding
@@ -22,24 +13,6 @@ setopt NO_flow_control   # inactivate C-s and C-q.
 unsetopt promptcr
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
-# history 
-source $ZDOTDIR/.zshrc_history
-
-# auto completion
-autoload -Uz compinit
-compinit -u
-
-# prompt
-source $ZDOTDIR/.zshrc_prompt
-
-# git
-autoload bashcompinit
-bashcompinit
-source $ZDOTDIR/git-completion.bash
-
-# aliases
-source $ZDOTDIR/.zshrc_aliases
-
-# KGB
-source $ZDOTDIR/.zshrc_kgb
-
+for i in $(setopt nullglob; echo $ZDOTDIR/zshrc.d/*.zsh); do
+    source $i
+done

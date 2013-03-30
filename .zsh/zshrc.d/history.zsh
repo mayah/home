@@ -5,11 +5,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 setopt extendedglob
 
-# a duplicated command line should not be inserted into the history file.
 setopt hist_ignore_dups
-
-# a command starting with a space will not be inserted into the history file.
 setopt hist_ignore_space
-
 setopt hist_ignore_all_dups hist_save_nodups
 setopt share_history
