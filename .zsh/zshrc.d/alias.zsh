@@ -1,6 +1,10 @@
 # -*- mode:shell-script -*-
 
+# Defining general aliases.
+# Each .zsh file may contain other aliases.
+
 # I would like to use 'open' as well in non-Mac environments.
+# TODO(mayah): When we have open, we should not override it?
 if [ -e /usr/bin/cygstart ]; then
     alias open="cygstart"
 elif [ -e /usr/bin/xdg-open ]; then

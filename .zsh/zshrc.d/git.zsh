@@ -16,6 +16,7 @@ zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' formats '%b'
 zstyle ':vcs_info:*' actionformats '%b|%a'
 
+# This function will be used prompt.zsh
 function show-git-current-branch {
     if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
         return
@@ -26,3 +27,8 @@ function show-git-current-branch {
     # in chromium or WebKit.
     echo "$vcs_info_msg_0_"
 }
+
+# Defining aliases of commands I often use.
+alias gst="git status -sb"
+alias gbr="git branch"
+alias grom="git rebase origin/master"

@@ -25,7 +25,8 @@ function precmd {
     IDNTBAR=${USER}@${SHORTHOST}
     # path part
     PATHBAR=\[${(%):-%~}\]
-    # some other information e.g. git branch
+    # some other information e.g. git branch.
+    # show-git-current-branch is defined in git.zsh.
     local GIT_BRANCH_NAME=`show-git-current-branch` 
     if [ -z $GIT_BRANCH_NAME ]; then
         INFOBAR=""
