@@ -10,11 +10,17 @@ PATHBAR_COLOR=$PR_YELLOW
 DATEBAR_COLOR=$PR_BLUE
 INFOBAR_COLOR=$PR_MAGENTA
 
+MARK_COLOR=$PR_NO_COLOR
+
 # When the shell is shown by SSH, we would like to indicate it.
 # Currently, we change the  IDNTBAR color.
-
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
     IDNTBAR_COLOR=$PR_CYAN
+fi
+
+# When I'm a super user, I want to be warned.
+if [ "$UID" -eq 0 ]; then
+    MARK_COLOR=$PR_RED
 fi
 
 function precmd {
@@ -58,7 +64,7 @@ setprompt() {
     setopt prompt_subst
     MARK=${(%):-%(!.#.$)}
     PROMPT='$IDNTBAR_COLOR$IDNTBAR $PATHBAR_COLOR$PATHBAR ${(e)PROMPT_FILLER} $INFOBAR_COLOR$INFOBAR $DATEBAR_COLOR$DATEBAR
-$PR_NO_COLOR$MARK '
+$MARK_COLOR$MARK $PR_NO_COLOR'
 }
 
 setprompt
