@@ -4,14 +4,16 @@
 # Each .zsh file may contain other aliases.
 
 # I would like to use 'open' as well in non-Mac environments.
-# TODO(mayah): When we have open, we should not override it?
-if [ -e /usr/bin/cygstart ]; then
-    alias open="cygstart"
-elif [ -e /usr/bin/xdg-open ]; then
-    alias open="xdg-open"
+# Note: Linux has 'open' command, but openvt is suitable for that purpose. Overriden.
+if ! command -v open > /dev/null 2>&1; then
+    if [ -e /usr/bin/cygstart ]; then
+        alias open="cygstart"
+    elif [ -e /usr/bin/xdg-open ]; then
+        alias open="xdg-open"
+    fi
 fi
 
-# TODO(mayah): We might want to genelize this.
+# TODO(mayah): We might want to generalize this.
 case `uname` in
     Darwin)
         alias ls="ls -GF"
