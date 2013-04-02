@@ -5,13 +5,12 @@
 
 # I would like to use 'open' as well in non-Mac environments.
 # Note: Linux has 'open' command, but openvt is suitable for that purpose. Overriden.
-if ! command -v open > /dev/null 2>&1; then
-    if [ -e /usr/bin/cygstart ]; then
-        alias open="cygstart"
-    elif [ -e /usr/bin/xdg-open ]; then
-        alias open="xdg-open"
-    fi
+if [ -e /usr/bin/cygstart ]; then
+    alias open="cygstart"
+elif [ -e /usr/bin/xdg-open ]; then
+    alias open="xdg-open"
 fi
+
 
 # TODO(mayah): We might want to generalize this.
 case `uname` in
