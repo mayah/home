@@ -2,6 +2,11 @@
 
 source $ZDOTDIR/base.zsh
 
+# If we don't use tmux, .zprofile is not used. Let's read it if we need.
+if [ ! ${ZPROFILE_READ:-} ]; then
+    source $ZDOTDIR/.zprofile
+fi
+
 # basic settings
 bindkey -e               # use emacs key binding
 setopt prompt_subst      # substitute environmental variables in a shell.

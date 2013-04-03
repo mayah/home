@@ -5,3 +5,6 @@ source $ZDOTDIR/base.zsh
 for i in $(setopt nullglob; echo $ZDOTDIR/zprofile.d/*.zsh); do
     source $i
 done
+
+ZPROFILE_READ=1
+
