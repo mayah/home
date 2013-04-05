@@ -11,7 +11,6 @@ elif [ -e /usr/bin/xdg-open ]; then
     alias open="xdg-open"
 fi
 
-
 # TODO(mayah): We might want to generalize this.
 case `uname` in
     Darwin)
@@ -41,3 +40,13 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -al"
 alias lal="ls -al"
+
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+
+# This will enable us to use aliases in sudo.
+# (If alias finishes with a space or tab, the shell will check if the next command is also aliased.)
+alias sudo='sudo '
+
+# I often use 'ps aux | grep'. Let's define it.
+alias pag="ps aux | grep"
