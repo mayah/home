@@ -32,3 +32,4 @@ function show-git-current-branch {
 alias gst="git status -sb"
 alias gbr="git branch"
 alias grom="git rebase origin/master"
+alias griom="git rebase -i origin/master"
