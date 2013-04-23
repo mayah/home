@@ -4,6 +4,8 @@ autoload bashcompinit
 bashcompinit
 
 # We would like to use the system installed git-completion.bash as much as possible.
+# TODO(mayah): This seems causing something bad in ubuntu 12.04 LTS. Maybe we should have
+# our version.
 if [ -e /usr/share/git-core/git-completion.bash ]; then
     source /usr/share/git-core/git-completion.bash
 elif [ -e /etc/bash_completion.d/git ]; then
