@@ -12,8 +12,20 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
-export C_INCLUDE_PATH=/opt/local/include:$C_INCLUDE_PATH
-export CPLUS_INCLUDE_PATH=/opt/local/include:$CPLUS_INCLUDE_PATH
+
+# If C_INCLUDE_PATH is like "/opt/local/include:", gcc searches "." also.
+# This caused a problem that my compiler test fails!
+if [ -n "$C_INCLUDE_PATH" ]; then
+    export C_INCLUDE_PATH=/opt/local/include:$C_INCLUDE_PATH
+else
+    export C_INCLUDE_PATH=/opt/local/include
+fi
+
+if [ -n "$CPLUS_INCLUDE_PATH" ]; then
+    export CPLUS_INCLUDE_PATH=/opt/local/include:$CPLUS_INCLUDE_PATH
+else
+    export CPLUS_INCLUDE_PATH=/opt/local/include
+fi
 
 # I often put my personal binaries into my home directory.
 export PATH=~/usr/depot_tools:$PATH
