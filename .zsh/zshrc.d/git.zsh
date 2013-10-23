@@ -30,8 +30,5 @@ function show-git-current-branch {
     echo "$vcs_info_msg_0_"
 }
 
-# Defining aliases of commands I often use.
-alias gst="git status -sb"
-alias gbr="git branch"
-alias grom="git rebase origin/master"
-alias griom="git rebase -i origin/master"
+# Aliases for git are defined in alias.zsh
+

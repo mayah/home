@@ -50,3 +50,9 @@ alias sudo='sudo '
 
 # I often use 'ps aux | grep'. Let's define it.
 alias pag="ps aux | grep"
+
+# --- git aliases
+alias gst="git status -sb"
+alias gbr="git branch"
+alias grom="git rebase origin/master"
+alias griom="git rebase -i origin/master"
