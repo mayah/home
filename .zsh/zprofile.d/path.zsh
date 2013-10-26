@@ -9,20 +9,23 @@ case `uname` in
         export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
 
         # If C_INCLUDE_PATH is like "/opt/local/include:", gcc searches "." also.
-        # This caused a problem that my compiler test fails!
+        # This might cause problems.
         if [ -n "$C_INCLUDE_PATH" ]; then
             export C_INCLUDE_PATH=/opt/local/include:$C_INCLUDE_PATH
         else
             export C_INCLUDE_PATH=/opt/local/include
         fi
 
+        # ditto.
         if [ -n "$CPLUS_INCLUDE_PATH" ]; then
             export CPLUS_INCLUDE_PATH=/opt/local/include:$CPLUS_INCLUDE_PATH
         else
             export CPLUS_INCLUDE_PATH=/opt/local/include
         fi
 
+        # Adds PostgreSQL paths.
         export PATH=/Library/PostgreSQL/9.1/bin:$PATH
+        export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
         ;;
     *)
         ;;
