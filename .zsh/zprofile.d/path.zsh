@@ -27,6 +27,12 @@ case `uname` in
         export PATH=/Library/PostgreSQL/9.1/bin:$PATH
         export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
         ;;
+    Linux)
+        # Prepare for Google Cloud SDK if any.
+        if [ -d $HOME/google-cloud-sdk/bin ]; then
+            export PATH=$HOME/google-cloud-sdk/bin:$PATH
+        fi
+        ;;
     *)
         ;;
 esac
