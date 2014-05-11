@@ -1,10 +1,6 @@
 # -*- mode: shell-script -*-
 
 case `uname` in
-    Darwin)
-        # Adds PostgreSQL paths.
-        export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
-        ;;
     Linux)
         # Prepare for Google Cloud SDK if any.
         if [ -d $HOME/google-cloud-sdk/bin ]; then

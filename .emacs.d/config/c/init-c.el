@@ -13,5 +13,7 @@
           '(lambda ()
              (c-set-offset 'innamespace 0)))
 
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
 (provide 'init-c)
 
