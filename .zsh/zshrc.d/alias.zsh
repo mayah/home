@@ -57,4 +57,5 @@ alias gbr="git branch"
 alias grom="git rebase origin/master"
 alias griom="git rebase -i origin/master"
 alias gomen="git commit --amend"
+alias gomicode="git commit -m 'Code'"
 
