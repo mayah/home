@@ -11,7 +11,9 @@ case `uname` in
         ;;
 esac
 
+if [ -d /usr/local/opt/go/libexec/bin ]; then
+    export PATH=/usr/local/opt/go/libexec/bin:$PATH
+fi
+
 # I often put my personal binaries into my home directory.
-export PATH=~/usr/depot_tools:$PATH
-export PATH=~/usr/bin:$PATH
-export PATH=~/usr/script:$PATH
+export PATH=~/usr/depot_tools:~/usr/bin:~/usr/script:$PATH
