@@ -60,6 +60,8 @@
 (require 'init-appearance)
 ;(require 'init-webkit)
 
+(require 'init-package)
+
 ; override the general configuration in some situations.
 (when (googlep)
   (require 'init-google))
