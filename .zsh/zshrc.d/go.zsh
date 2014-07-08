@@ -1,3 +1,3 @@
 # -*- mode: shell-script -*-
 
-export GOPATH=~/usr/go
+export GOPATH=~/opt/go
