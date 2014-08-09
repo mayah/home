@@ -1,5 +1,11 @@
 # -*- mode: shell-script -*-
 
+function add_path_if_any() {
+    if [ -d "$1" ]; then
+        export PATH=$1:$PATH
+    fi
+}
+
 case `uname` in
     Linux)
         # Prepare for Google Cloud SDK if any.
@@ -11,18 +17,9 @@ case `uname` in
         ;;
 esac
 
-if [ -d /usr/local/opt/go/libexec/bin ]; then
-    export PATH=/usr/local/opt/go/libexec/bin:$PATH
-fi
-
-if [ -d ~/opt/go_appengine ]; then
-    export PATH=~/opt/go_appengine:$PATH
-fi
-
-if [ -d ~/opt/bin ]; then
-    export PATH=~/opt/bin:$PATH
-fi
-
-# I often put my personal binaries into my home directory.
-export PATH=~/usr/depot_tools:~/usr/bin:~/usr/script:$PATH
-
+add_path_if_any "/usr/local/opt/go/libexec/bin"
+add_path_if_any "$HOME/opt/go_appengine"
+add_path_if_any "$HOME/opt/bin"
+add_path_if_any "$HOME/usr/depot_tools"
+add_path_if_any "$HOME/usr/bin"
+add_path_if_any "$HOME/usr/script"
