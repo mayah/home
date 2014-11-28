@@ -31,4 +31,7 @@ that uses 'font-lock-warning-face'."
 ; webkit should use offset 4.
 ; (load-file "~/.emacs.d/config/google/webkit-conf.el")
 
+; Go
+(setq enable-gofmt-before-save nil)
+
 (provide 'init-google)
