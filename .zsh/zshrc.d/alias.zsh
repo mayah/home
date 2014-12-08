@@ -21,6 +21,8 @@ case `uname` in
         ;;
     Linux)
         alias ls="ls -CF --color"
+        alias pbcopy="xsel --clipboard --input"
+        alias pbpaste="xsel --clipboard --output"
         ;;
     *)
         alias ls="ls -CF"
