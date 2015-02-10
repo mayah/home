@@ -3,8 +3,8 @@
 ;;;
 
 ; Load default file.
-(load-file "/home/build/public/eng/elisp/google.el")
-(setq p4-use-p4config-exclusively t)
+;(load-file "/home/build/public/eng/elisp/google.el")
+;(setq p4-use-p4config-exclusively t)
 
 (require 'google)
 
