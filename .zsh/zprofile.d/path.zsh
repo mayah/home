@@ -20,6 +20,6 @@ esac
 add_path_if_any "/usr/local/opt/go/libexec/bin"
 add_path_if_any "$HOME/opt/go_appengine"
 add_path_if_any "$HOME/opt/bin"
-add_path_if_any "$HOME/usr/depot_tools"
+add_path_if_any "$HOME/opt/depot_tools"
 add_path_if_any "$HOME/usr/bin"
 add_path_if_any "$HOME/usr/script"
