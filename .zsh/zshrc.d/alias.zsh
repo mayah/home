@@ -37,6 +37,7 @@ alias s="ls"
 alias c="cd"
 alias d="cd"
 alias ccd="cd"
+alias dcd="cd"
 
 alias la="ls -a"
 alias ll="ls -l"
