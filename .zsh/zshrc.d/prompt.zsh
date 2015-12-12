@@ -56,7 +56,7 @@ function precmd {
     if [[ $total_size -gt $TERMWIDTH ]]; then
         (( PR_PWDLEN = $TERMWIDTH - $idntbar_size - $datebar_size - $infobar_size))
     else
-        PROMPT_FILLER="\${(l.(($TERMWIDTH - $total_size))).. .)}"
+        PROMPT_FILLER="\${(l.(($TERMWIDTH - $total_size)).. .)}"
     fi
 }
 
