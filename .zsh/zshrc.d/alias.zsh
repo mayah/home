@@ -57,7 +57,7 @@ alias pag="ps aux | grep"
 alias odx="od -tx1 -Ax"
 
 # --- git aliases
-alias gst="git status -sb"
+alias gst="git status"
 alias gbr="git branch"
 alias grom="git rebase origin/master"
 alias griom="git rebase -i origin/master"
