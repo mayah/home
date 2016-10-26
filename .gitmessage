@@ -1,0 +1,22 @@
+
+
+
+# :bug:              when fixing a bug
+# :recycle:          when improving the format/structure of the code (refacotring)
+# :rocket:           when improving performance
+# :memo:             when writing docs
+# :fire:             when removing code or files
+# :white_check_mark: when adding tests
+# 
+# :green_heart: when fixing the CI build
+# :shirt:       when removing linter warnings
+#
+# :non-potable_water: when plugging memory leaks
+# :lock:              when dealing with security
+#
+# :penguin:        when fixing something on Linux
+# :apple:          when fixing something on macOS
+# :checkered_flag: when fixing something on Windows
+#
+# :arrow_up:   when upgrading dependencies
+# :arrow_down: when downgrading dependencies
