@@ -7,6 +7,7 @@ function add_path_if_any() {
 }
 
 add_path_if_any "/usr/local/opt/go/libexec/bin"
+add_path_if_any "/usr/local/texlive/2016/bin/x86_64-darwin"
 add_path_if_any "$HOME/opt/bin"
 add_path_if_any "$HOME/opt/depot_tools"
 add_path_if_any "$HOME/opt/go_appengine"
