@@ -3,7 +3,7 @@
 #                                               50                   72
 
 # :bug:               when fixing a bug
-# :recycle:           when improving the format/structure of the code (refacotring)
+# :recycle:           when refactoring, improving the format/structure
 # :rocket:            when improving performance
 # :memo:              when writing docs
 # :fire:              when removing code or files
