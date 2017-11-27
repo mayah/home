@@ -4,6 +4,13 @@
 ;;; init.el -- Emacs initial setting
 ;;;
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (unless (boundp 'user-emacs-directory)
   (defvar user-emacs-directory (expand-file-name "~/.emacs.d/")))
 
@@ -72,11 +79,5 @@
  ;; If there is more than one, they won't work right.
  '(gud-gdb-command-name "gdb --annotate=1")
  '(large-file-warning-threshold nil)
+ '(package-selected-packages (quote (markdown-mode)))
  '(safe-local-variable-values (quote ((encoding . utf-8) (encoding . utf-8-unix)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(font-lock-function-name-face ((t (:foreground "brightcyan"))))
- '(minibuffer-prompt ((t (:foreground "brightcyan")))))
