@@ -62,7 +62,6 @@ alias gbr="git branch"
 alias grom="git rebase origin/master"
 alias griom="git rebase -i origin/master"
 alias gomen="git commit --amend"
-alias gomicode="git commit -m code"
-alias gomi="git commit -m gomi"
+alias gomi="git commit -m tmp"
 alias gcm="git checkout master"
 
