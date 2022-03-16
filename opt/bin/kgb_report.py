@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # How to use:
 #   kgb_report.py <type> <content>
 #   For exmaple:
 #     kgb_report.py commands hoge
 
-import commands
+import subprocess
 import json
 import os
 import sys
@@ -22,7 +22,7 @@ elif os.path.exists('/Users/mayah'):
 else:
     HOME = '/Users/shinyak'
     
-SHORTHOST = commands.getoutput('hostname -s')
+SHORTHOST = subprocess.getoutput('hostname -s')
 
 class KGBReport:
     def __init__(self):
