@@ -2,3 +2,5 @@
 	branch = false
 [pull]
 	rebase = false
+[user]
+	name = mayah
