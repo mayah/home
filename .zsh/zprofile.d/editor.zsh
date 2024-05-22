@@ -1,6 +1,8 @@
 # -*- mode: shell-script -*-
 
-if which vi >& /dev/null; then
+if which vim >& /dev/null; then
+    export EDITOR=vim
+elif which vi >& /dev/null; then
     export EDITOR=vi
 fi
 
