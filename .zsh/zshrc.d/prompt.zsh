@@ -40,7 +40,7 @@ function precmd {
         INFOBAR="[$GIT_BRANCH_NAME]"
     fi
     # current date
-    DATEBAR=${(%):-(%0*/%w)}
+    DATEBAR=${(%):-(%DT%0*)}
     # filler
     PROMPT_FILLER=''
 
