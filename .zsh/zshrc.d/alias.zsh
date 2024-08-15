@@ -63,5 +63,6 @@ alias grom="git rebase origin/master"
 alias griom="git rebase -i origin/master"
 alias gomen="git commit --amend"
 alias gomi="git commit -m tmp"
+alias gch="git checkout"
 alias gcm="git checkout master"
 
