@@ -6,6 +6,8 @@
 	name = mayah
 
 [alias]
+	ci = commit
 	co = checkout
 	br = branch
 	st = status
+	sw = switch
